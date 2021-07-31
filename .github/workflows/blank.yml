@@ -33,14 +33,17 @@
 		 <h2>All Post </h2>
 		 <?php 
 
+		 	$postsCount = $instance['count_num'];
 		 	$currPage = get_query_var('paged');
 
 		 	$allPosts = new WP_Query(array(
 		 		'category_name' => 'posts', 
-		 		'post_per_page' => 2,
+		 		'post_per_page' => $postaCount,
 		 		'paged' => $currPage
 
 		 	));
+
+		 	$postsCount = $instance['count_num'];
 
 		 	if ($allPosts->have_posts()) :
 		 		while ($allPosts->have_posts()) :
